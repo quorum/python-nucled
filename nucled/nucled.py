@@ -92,11 +92,10 @@ class LED(object):
                 if len(l) == 0 or l == "\x00":
                     continue
                 try:
-                    print "FETCH_STATE: '{0}'".format(l.strip())
                     desc, value = l.strip().split(":")
                 except:
-                    raise
-                    pass
+                    _LOGGER.warn("Skipping state line: {0}".format(l.strip()))
+                    continue
                 if not desc.lower().startswith(self._target):
                     continue
                 if "Brightness" in desc:
