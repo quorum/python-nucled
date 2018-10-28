@@ -4,7 +4,6 @@ import time
 import logging
 
 _LOGGER = logging.getLogger(__name__)
-_LOGGER.setLevel(logging.DEBUG)
 
 
 class LEDException(Exception):
@@ -93,6 +92,7 @@ class LED(object):
                 if len(l) == 0 or l == "\x00":
                     continue
                 try:
+                    print "FETCH_STATE: '{0}'".format(l.strip())
                     desc, value = l.strip().split(":")
                 except:
                     raise
