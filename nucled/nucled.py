@@ -219,7 +219,7 @@ class Ring(LED):
     """Represents NUC ring LED."""
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, target="ring", **kwargs)
+        super(Ring, self).__init__(*args, target="ring", **kwargs)
         self.supported_colors = {
             0x00: Color.Off,
             0x01: Color.Cyan,
@@ -236,5 +236,5 @@ class Power(LED):
     """Represents NUC power LED."""
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, target="power", **kwargs)
+        super(Power, self).__init__(*args, target="power", **kwargs)
         self.supported_colors = {0x00: Color.Off, 0x01: Color.Blue, 0x02: Color.Amber}
