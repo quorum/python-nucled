@@ -44,7 +44,7 @@ class Color(enum.Enum):
     White = "white"
 
 
-class LED:
+class LED(object):
     """Interface for Intel NUC power and ring LEDs.
 
     Changing the LED settings require you to call `set_state`,
