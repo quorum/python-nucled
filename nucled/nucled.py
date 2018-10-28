@@ -145,7 +145,7 @@ class LED:
         return self._color
 
     @color.setter
-    def color(self, color: Color):
+    def color(self, color):
         """Set color."""
         if isinstance(color, str):
             color = Color(color)
@@ -161,7 +161,7 @@ class LED:
         return self._brightness
 
     @brightness.setter
-    def brightness(self, brightness: int):
+    def brightness(self, brightness):
         """Set brightness."""
         if brightness < 0 or brightness > 100:
             raise LEDException("Brightness must be [0-100], was: %s" % brightness)
