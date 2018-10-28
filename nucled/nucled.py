@@ -154,7 +154,7 @@ class LED:
         self._color = color
 
     @property
-    def brightness(self) -> int:
+    def brightness(self):
         """Return current brightness."""
         if self._brightness is None:
             self.fetch_state()
@@ -168,7 +168,7 @@ class LED:
         self._brightness = brightness
 
     @property
-    def effect(self) -> Effect:
+    def effect(self):
         """Return current effect."""
         if self._effect is None:
             self.fetch_state()
@@ -183,7 +183,7 @@ class LED:
             effect = Effect(effect)
         self._effect = effect
 
-    def notify(self, *, color, brightness, effect, duration):
+    def notify(self, color, brightness, effect, duration):
         """Set a temporary state for the LED for given duration."""
         current_state = self.get_state_string()
         _LOGGER.debug("Starting notifying, original state: %s" % current_state)
